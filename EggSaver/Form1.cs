@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +13,19 @@ namespace EggSaver
 {
     public partial class Form1 : Form
     {
+        [DllImport("user32.dll")]
+        static extern bool HideCaret(IntPtr hWnd);
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+            try {
+                HideCaret(this.Handle);
+            }
+            catch
+            {
+
+            }
+        }
         public Form1()
         {
             InitializeComponent();
@@ -82,6 +96,20 @@ namespace EggSaver
             cls.Add(Color.Purple);
             cls.Add(Color.Green);
             return cls;
+        }
+    }
+    public partial class ReadOnlyRichTextBox : RichTextBox
+    {
+        [DllImport("user32.dll")]
+        static extern bool HideCaret(IntPtr hWnd);
+        public ReadOnlyRichTextBox()
+        {
+            this.ReadOnly = true;
+        }
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+            HideCaret(this.Handle);
         }
     }
 }

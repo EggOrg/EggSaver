@@ -29,7 +29,7 @@ namespace EggSaver
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new EggSaver.ReadOnlyRichTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -38,6 +38,7 @@ namespace EggSaver
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.Menu;
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
@@ -84,7 +85,7 @@ namespace EggSaver
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private ReadOnlyRichTextBox richTextBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
