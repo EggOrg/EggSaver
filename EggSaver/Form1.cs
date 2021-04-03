@@ -37,30 +37,30 @@ namespace EggSaver
             await Typewrite("The all-seeing E E G is coming... What do you do?\n");
             await Typewrite("> Run   > Become Fren\n");
             await Replace("> Become Fren");
-            await Task.Delay(500);
+            await Task.Delay(1000);
             await Remove();
             await Typewrite("You have chosen correctly. E E G is fren!\n");
             await Typewrite("The E E G means no harm.\n");
             await Typewrite("E E G offers: +1\n");
             await Typewrite("> Accepp   > Rejecc\n");
             await Replace("> Accepp");
-            await Task.Delay(500);
+            await Task.Delay(1000);
             await Remove();
             await Typewrite("The E E G thanks you for your time.\n");
             await Typewrite("> Show colors   > Exit screensaver");
             await Replace("> Show colors");
-            await Task.Delay(500);
+            await Task.Delay(1000);
             await Remove();
             await Typewrite("Wait, but this can't be the end!\n");
             await Typewrite("E E G must always be fren!\n");
             await Typewrite("> Befriend E E G forever   > Leave E E G\n");
             await Replace("> Befriend E E G forever");
-            await Task.Delay(500);
+            await Task.Delay(1000);
             await Remove();
             while (true)
             {
                 await Task.Delay(500);
-                await Typewrite("E E G is fren forever. ");
+                await Typewrite("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
                 richTextBox1.ForeColor = BuildCl()[new Random().Next(0, BuildCl().ToArray().Length)];
             }
         }
